@@ -1,5 +1,12 @@
 # puppet-squid3
 
+original fork of
+https://github.com/thias/puppet-squid3
+but this seems to be stale,
+https://github.com/actionjack/puppet-squid3
+has a bunch of pull requests and fixes that were ignored, so I have forked
+this merged it all... and I will continue to maintain this branch as needed.
+
 ## Overview
 
 Install, enable and configure a Squid 3 http proxy server with its main
