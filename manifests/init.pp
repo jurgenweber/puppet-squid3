@@ -25,7 +25,6 @@
 #
 class squid3 (
   # Options are in the same order they appear in squid.conf
-  $use_deprecated_opts  = true,
   $http_port            = [ '3128' ],
   $https_port           = [],
   $acl                  = [],
@@ -48,6 +47,10 @@ class squid3 (
   $template                      = 'long',
   $version                       = 'installed'
 ) inherits ::squid3::params {
+
+  if versioncmp($squid_version, '3.2') < 0 {
+    $old_squid_format = true
+  }
 
   $use_template = $template ? {
     'short' => 'squid3/squid.conf.short.erb',
