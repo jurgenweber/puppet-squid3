@@ -45,7 +45,10 @@ class squid3 (
   $config_hash                   = {},
   $refresh_patterns              = [],
   $template                      = 'long',
-  $version                       = 'installed'
+  $version                       = 'installed',
+  $access_log                    = [],
+  $cache_log                     = undef,
+  $cache_store_log               = undef,
 ) inherits ::squid3::params {
 
   if versioncmp($squid_version, '3.2') < 0 {
